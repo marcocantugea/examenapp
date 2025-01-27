@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Outsystem practice questions</h2>
+    <form>
+      <div *ngFor="let question of selectedQuestions; let i = index" class="question">
+        <p>{{ i + 1 }}. {{ question.question}}</p>
+        <div *ngFor="let option of question.options; let j = index" class="mb-2">
+          <label>
+            <input type="radio" name="question{{i}}" [value]="j" [(ngModel)]="question.selectedOption"> {{ option }}
+          </label>
+        </div>
+        <div *ngIf="formFinished">
+            <p *ngIf="question.selectedOption === question.correctOption" class="alert alert-success">{{question.anwserExplanation}}</p>
+            <p *ngIf="question.selectedOption !== question.correctOption" class="alert alert-danger">Incorrect!</p>
+        </div>
+        <hr>
+      </div>
+      <div class="container text-center">
+        <button  type="button" class="btn btn-primary btn-large" style="width: 70%;" (click)="validateAnswers()">Validate Answers</button>
+      </div>
+     
+    </form>
+  </div>

@@ -3,4 +3,6 @@ export interface IQuestion {
     question: string;
     options: string[];
     correctOption: number;
+    anwserExplanation?: string;
+    selectedOption?: number;
 }
