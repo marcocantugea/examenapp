@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Outsystem practice questions</h2>
+    <h2>Outsystem ODC Questions</h2>
     <form>
       <div *ngFor="let question of selectedQuestions; let i = index" class="question">
         <p>{{ i + 1 }}. {{ question.question}}</p>
@@ -10,13 +10,13 @@
         </div>
         <div *ngIf="formFinished">
             <p *ngIf="question.selectedOption === question.correctOption" class="alert alert-success">{{question.anwserExplanation}}</p>
-            <p *ngIf="question.selectedOption !== question.correctOption" class="alert alert-danger">Incorrect!</p>
+            <p *ngIf="question.selectedOption && question.selectedOption !== question.correctOption" class="alert alert-danger">Incorrect!</p>
         </div>
         <hr>
       </div>
-      <div class="container text-center">
+      <!-- <div class="container text-center">
         <button  type="button" class="btn btn-primary btn-large" style="width: 70%;" (click)="validateAnswers()">Validate Answers</button>
-      </div>
+      </div> -->
      
     </form>
   </div>

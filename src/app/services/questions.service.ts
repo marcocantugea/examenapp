@@ -30,7 +30,7 @@ export class QuestionsService {
     },
     {
       id: 4,
-      question: '4. In which Service Studio layer can Screens and Blocks be found?',
+      question: 'In which Service Studio layer can Screens and Blocks be found?',
       options: ['Processes', 'Interface', 'Logic', 'Data'],
       correctOption: 1,
       anwserExplanation:'That\'s Right! You can also find Images and Themes in this layer'
@@ -426,7 +426,7 @@ export class QuestionsService {
         'When List Items have the full swiping option activated, the List Action is not necessary.',
         'The List Action triggers a Screen Action that will have the logic to be executed on swipe.'
       ],
-      correctOption: 1,
+      correctOption: 2,
       anwserExplanation: 'That\'s Right! Yes, it is, to determine what happens on swipe. It just uses the logic defined on the List Item.'
     },
     {
@@ -650,6 +650,416 @@ export class QuestionsService {
       ],
       correctOption: 0,
       anwserExplanation: 'That\'s Right! This allows to branch the execution and avoid storing invalid data in the database.'
+    },
+    {
+      id: 58,
+      question: 'What is an Aggregate?',
+      options: [
+        'Integrated service to get data from database',
+        'A SQL query constructor',
+        'A Visual element to allows you to define a query to fetch data from entities',
+        'An action server to retry data'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That’s Right! It is a visual element that allows you to define a query to fetch data from entities with sources, filters, and sorting.'
+    },
+    {
+      id: 59,
+      question: 'Consider an Aggregate with a "With or Without" join between two entities. What is the expected output of the Aggregate?',
+      options: [
+        'All records from both Entities (FULL OUTER JOIN).',
+        'Only records where there is a match between the two Entities (INNER JOIN).',
+        'All records from the left entity even if there is no match in the right entity (LEFT JOIN).',
+        'All records from the right entity even if there is no match in the left entity (RIGHT JOIN).'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! Yes! The With Or Without Join is equivalent to a LEFT JOIN, so the order of the Entities in the join matter!'
+    },
+    {
+      id: 60,
+      question: 'Considering that Aggregates can have hidden columns, which of the following options is correct?',
+      options: [
+        'Hiding columns in the Aggregate only affects the preview of the output.',
+        'Columns that are empty in the database are automatically hidden.',
+        'The hidden columns help optimizing the Aggregate.',
+        'The hidden columns are not part of the output.'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! Correct! The hidden columns will still be available in the output.'
+    },
+    {
+      id: 61,
+      question: 'Which of the following elements can\'t be used to create calculated attributes in an Aggregate?',
+      options: [
+        'Value of the attributes of the Source Entities.',
+        'Built-in Functions that can be translated to SQL (e.g. Length(), Power()).',
+        'Variables.',
+        'Server Actions using Entity Attributes.'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! We can\'t do that! Would it be possible to translate all Server Actions into SQL?'
+    },
+    {
+      id: 62,
+      question: 'Consider that we want to apply aggregation functions in an Aggregate. Which of the following options is false?',
+      options: [
+        'We can apply multiple aggregation functions inside an Aggregate.',
+        'The output of the Aggregate will contain all attributes from the Source Entities plus the aggregation columns.',
+        'We can apply the following functions on attributes of integer data type: sum, max, min, count and average.',
+        'The output of the Aggregate will not include the columns at grey.'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That\'s Right! Yes, this is false. Only the aggregation columns are returned.'
+    },
+    {
+      id: 63,
+      question: 'Considering Users and Roles in OutSystems, which of the following options is correct?',
+      options: [
+        'By default, end-users are managed in the built-in Users application.',
+        'End-users can only be created programmatically, using Actions from the Users application.',
+        'There are three built-in roles in OutSystems: Anonymous, AppUser and Registered.',
+        'All users, with or without a login, have automatically the Registered Role.'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! The Users app can be accessed using the browser, where users can be created and managed.'
+    },
+    {
+      id: 64,
+      question: 'In OutSystems, how do we restrict access to a Screen?',
+      options: [
+        'Go to the Users application and associate the Screen to a specific role.',
+        'In the Screen Properties, untick roles to restrict their access.',
+        'Use the CheckRole Action.',
+        'We don\'t. Only users with a username and password can access.'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That\'s Right! Correct! There\'s a checkbox for every Role in the app.'
+    },
+    {
+      id: 65,
+      question: 'Considering the built-in Role Actions, which of the following options is false?',
+      options: [
+        'The CheckRole Action checks if a user has that particular Role.',
+        'The GrantRole Action allows to grant a Role to a user programmatically.',
+        'The RevokeRole Action allows to remove a Role from a user programmatically.',
+        'The CreateUserWithRole Action creates an end-user and assigns it the Role.'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! This Action does not exist. This is actually a two step operation: create the user, and assign a role to the user.'
+    },
+    {
+      id: 66,
+      question: 'In OutSystems, where can we place breakpoints?',
+      options: [
+        'In Actions only (Client-side and Server-Side)',
+        'Server-side logic only',
+        'Client-side logic only',
+        'In Actions and Variables'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! Correct! Breakpoints can only be placed in action flows, regardless of whether they are client or server-side.'
+    },
+    {
+      id: 67,
+      question: 'In OutSystems, it is possible to inspect the values of variables while debugging.',
+      options: [
+        'True',
+        'False'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! It\'s possible to inspect the values of variables when debugging the code, depending on their scope.'
+    },
+    {
+      id: 68,
+      question: 'Which of the following commands is not available in the OutSystems debugger?',
+      options: [
+        'Stop Debugging',
+        'Continue Request',
+        'Step Over',
+        'Restart Debugging'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! You can\'t restart debug while its instance is being executed. You can, however, stop and start it again.'
+    },
+    {
+      id: 69,
+      question: 'When debugging a consumer module, how do we guarantee that the execution stops on breakpoints defined in the producer module?',
+      options: [
+        'We just need to set breakpoints in the producer module. The execution will stop on its breakpoints automatically.',
+        'We need to also start the debugger on the producer module.',
+        'Nothing, just leave Service Studio open.',
+        'In the producer, set the Entry Module property to the consumer module.'
+      ],  
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! After this step, we can inspect the logic of any action.'
+    },
+    {
+      id: 70,
+      question: 'On Pagination and Sorting, what do we need to set up in the aggregate to make the sort function?',
+      options: [
+        'Nothing will be set up automatically',
+        'Add dynamic sort',
+        'Add Sort Client Action',
+        'Create a local variable to hold the current sort attribute'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That’s Right! It is necessary to add dynamic sort to the aggregate.'
+    },
+    {
+      id: 71,
+      question: 'Which of the following options is correct, when implementing pagination with Tables or Lists?',
+      options: [
+        'The Start Index property of the Pagination holds the current page number.',
+        'The Max Records property of the Pagination holds the number of records to show per page.',
+        'The Total Count input of the Pagination pattern should be set to the number of records per page.'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That\'s Right! Whereas the Start Index is the offset.'
+    },
+    {
+      id: 72,
+      question: 'Regarding sorting in a Table, which of the following options is correct?',
+      options: [
+        'All header cells need to have the Sort Attribute property defined.',
+        'Only the Sort Attribute of the header cells needs to be defined. Data is refreshed automatically.',
+        'The On Sort event has an input parameter containing the clicked column.'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! And that input is associated with the column that the end-user selected to sort by.'
+    },
+    {
+      id: 73,
+      question: 'Regarding sorting Lists, which of the following options is correct?',
+      options: [
+        'Lists have a built-in On Sort event.',
+        'Sort clauses cannot be changed dynamically at runtime when using Lists.',
+        'Other Widgets should be used to allow the end-user to define the sort criteria.'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! Those Widgets would trigger a refresh of the data with the new sort criteria.'
+    },
+    {
+      id: 74,
+      question: 'In OutSystems, a Block is a reusable UI component. Which of the following is NOT correct?',
+      options: [
+        'A Block promotes reusability, i.e. develop once, reuse many times.',
+        'A Block encapsulates its own logic.',
+        'A Block improves maintainability, i.e., change the design or functionality, affect all usages.',
+        'A Block can only be reused once.'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! If it\'s used once, maybe it doesn\'t need to be a Block.'
+    },
+    {
+      id: 75,
+      question: 'A Block can be used...',
+      options: [
+        'Only inside other Screens.',
+        'Inside Screens and Blocks, including itself.',
+        'Inside Screens and Blocks, except on itself.',
+        'Only inside other Blocks.'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! Although Blocks can be used inside other Blocks, they cannot be used inside themselves as recursion is not allowed.'
+    },
+    {
+      id: 76,
+      question: 'Regarding Placeholders, which of the following options is correct?',
+      options: [
+        'A Placeholder reserves space in the interface to be allocated when the block is instantiated.',
+        'When a Block with Placeholders is instantiated, it is mandatory to place at least one widget inside the placeholders.',
+        'Placeholders can be added to Screens and Blocks.',
+        'Only one placeholder may be added per Block.'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! And the content inside the Placeholder may be different for each instance.'
+    },
+    {
+      id: 77,
+      question: 'Which is the life cycle for Events?',
+      options: [
+        'Parameter change, Render Block, Render Screen, After Fetch.',
+        'Render Screen, Render Block, Parameter Change, Render Block.',
+        'On Init, Render page, render block, parameter change.'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That’s Right! Parameter change, Render Block, Render Screen, After Fetch.'
+    },
+    {
+      id: 78,
+      question: 'Regarding Block Events, which of the following options is false?',
+      options: [
+        'Events can be defined at the Block or Screen level.',
+        'Events allow to pass information from the Block\'s scope to the parent scope.',
+        'Events are triggered by a Block and handled by its parent.',
+        'Two instances of a Block may use the same handler for the same event.'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! Events allow to communicate with the parent element. Screens do not have a parent.'
+    },
+    {
+      id: 79,
+      question: 'In which of the following situations is it necessary to define a handler for a Block Event?',
+      options: [
+        'When the event has Input Parameters.',
+        'When the Block has Placeholders.',
+        'When the event Input Parameters are all mandatory.',
+        'When the Event is set to mandatory.'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! In these cases, a Client Action must be specified to handle the event. Although it may be empty.'
+    },
+    {
+      id: 80,
+      question: 'In which of the following situations is the On Parameters Changed Event triggered?',
+      options: [
+        'If the value of a Block Input Parameters changes inside a Client Action of the Block.',
+        'The On Parameters Changed must be explicitly triggered by the parent of the Block.',
+        'When the parent of the Block changes the value of at least one of the Block Input Parameters.'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! This allows a Block to react to changes from the outside.'
+    },
+    {
+      id: 81,
+      question: 'Which of the following events is not available in Screens or Blocks?',
+      options: [
+        'Initialize',
+        'Ready',
+        'After Fetch',
+        'Render'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! This event is only available in Screen Aggregates and Data Actions. It acts upon data fetched from the database or server.'
+    },
+    {
+      id: 82,
+      question: 'Considering the Initialize event of a Screen, which of the following would be the best use case for that event?',
+      options: [
+        'Retrieve data from the server database.',
+        'Act on data returned by a Data Action.',
+        'Manipulate the DOM.',
+        'Set the default value of a Local Variable.'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! This is the perfect place for that!'
+    },
+    {
+      id: 83,
+      question: 'Which of the following is the correct order of occurrence of events in a Screen?',
+      options: [
+        'Initialize, Ready, Render, Destroy.',
+        'Initialize, Destroy, Ready, Render.',
+        'Ready, Initialize, Render, Destroy.',
+        'Initialize, Render, Ready, Destroy.'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! Remember that After Fetch only occurs for Screen Aggregates and Data Actions.'
+    },
+    {
+      id: 84,
+      question: 'Which of the following options is false regarding Screen Aggregates?',
+      options: [
+        'The Render Event on the Screen is triggered when an Aggregate with the Fetch property set to "only on demand" finishes its execution.',
+        'A Screen Aggregate can be triggered when a screen is initializing or only On Demand.',
+        'All Aggregates, by default, have the Fetch property set to On Demand.',
+        'The On After Fetch Event is triggered for every Aggregate, regardless of its Fetch property.'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! You\'re right; it\'s false! When an Aggregate is created, by default it will be triggered At Start.'
+    },
+    {
+      id: 85,
+      question: 'Consider an Aggregate with the Fetch property set to Only On Demand. When does that Aggregate run?',
+      options: [
+        'Automatically, when the Screen is initializing.',
+        'Programmatically, using a Refresh Data node in a Screen Action.',
+        'Automatically, when the Aggregates set to run "At Start" finish.',
+        'Programmatically, using a Server Action.'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That\'s Right! That\'s correct. And we can use the Refresh Data node for Aggregates set to fetch data at start as well.'
+    },
+    {
+      id: 86,
+      question: 'What is a client variable?',
+      options: [
+        'A stored variable in the database.',
+        'Is a configuration variable that allows to store long-lived and user-specific information.',
+        'Is a variable that is used in screens.'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That’s Right! Is a variable that is stored in the client browser.'
+    },
+    {
+      id: 87,
+      question: 'Which of the following options is correct regarding Client Variables?',
+      options: [
+        'The value of a Client Variable is shared among all logged-in users.',
+        'Lists or Binary Data can also be stored on Client Variables.',
+        'Client Variables should be used to store confidential information.',
+        'Client Variables are useful to cache frequently accessed information.'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! By caching frequently accessed values on Client Variables, it is possible to avoid requests to the server or database.'
+    },
+    {
+      id: 88,
+      question: 'Which of the following would be a good use case for a Client Variable?',
+      options: [
+        'Credit Card Number',
+        'Profile Picture',
+        'User Identifier',
+        'User Name'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! Since the name of the logged-in user is shown frequently, this is a good candidate for a Client Variable.'
+    },
+    {
+      id: 89,
+      question: 'In Client Variables can we store a list of Entities?',
+      options: [
+        'True',
+        'False'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That’s right! The client variables are limited to basic data type and Entity identifiers.'
+    },
+    {
+      id: 90,
+      question: 'A client variable is defined when the user login into the application, when is restored as default?',
+      options: [
+        'On destroying event.',
+        'On changing the screen.',
+        'On logout.',
+        'Defined on Client Action.'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That’s right! The variable resets to defaults on logout.'
+    },
+    {
+      id: 91,
+      question: 'The value of a ______ can be modified in Service Center to change the application behavior at runtime.',
+      options: [
+        'Site Property',
+        'Client Variable',
+        'Screen variable',
+        'Data Entity'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! The Site property Default Value can be set at design time and modified in Service Center to be applied to the environment.'
+    },
+    {
+      id: 92,
+      question: 'Which of the following is a good use case for a Site Property?',
+      options: [
+        'Current user ID',
+        'Total Stock Quantity of Products',
+        'REST Web Service API Key',
+        'Search Keyword'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! This would be a good use case!'
     }
   ]
 

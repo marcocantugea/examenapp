@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IQuestion } from '../../interfaces/IQuestion';
 import { QuestionsService } from '../../services/questions.service';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './questions.component.html',
   styleUrl: './questions.component.scss'
 })
-export class QuestionsComponent {
+export class QuestionsComponent implements OnInit{
 
   questions: IQuestion[] = [];
   selectedQuestions: IQuestion[] = [];
@@ -24,6 +24,10 @@ export class QuestionsComponent {
   constructor(private questionsService: QuestionsService) {
     this.questions = this.questionsService.getQuestions();
     this.selectedQuestions = this.questionsService.getRandomQuestions(this.questionCount);
+  }
+
+  ngOnInit(): void {
+    this.validateAnswers();
   }
 
   checkAnswer(question: IQuestion, option: number): void {
