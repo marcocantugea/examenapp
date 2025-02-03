@@ -1060,7 +1060,104 @@ export class QuestionsService {
       ],
       correctOption: 2,
       anwserExplanation: 'That\'s Right! This would be a good use case!'
+    },
+    {
+      id: 93,
+      question: 'Which of the following is the correct syntax for Entities and Attributes?',
+      options: [
+        '{Entity}.[Attribute]',
+        '(Entity).{Attribute}',
+        '[Entity].{Attribute}',
+        'Entity.Attribute'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That\'s Right! Entities with curly brackets and Attributes with square brackets.'
+    },
+    {
+      id: 94,
+      question: 'Considering Aggregates and the SQL Tool, which of the following is the correct option?',
+      options: [
+        'All queries that can be written in an SQL Tool can be defined in an Aggregate.',
+        'Joins between entities can only be defined in Aggregates.',
+        'The SQL Tool allows to write queries that contain sub-queries.',
+        'Attribute grouping can only be done with the SQL Tool.'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That\'s Right! That, and much more!'
+    },
+    {
+      id: 95,
+      question: 'A developer should favor using a Structure instead of the Entity in the output of a SELECT SQL Query. Do you agree with this statement?',
+      options: [
+        'Yes, because queries become easier to maintain.',
+        'Yes, because queries will retrieve fewer Attributes and less data.',
+        'No, since it is exactly the same.',
+        'No, it is preferable to use the Entity instead of the Structure.'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That\'s Right! By selecting only and exactly the attributes you need, you\'ll ensure that the output of the query is optimized.'
+    },
+    {
+      id: 96,
+      question: 'Regarding non-SELECT queries, which of the following options is correct?',
+      options: [
+        'It is not possible to execute DELETE queries with the SQL Tool.',
+        'It is not possible to use Query Parameters in Non-SELECT queries.',
+        'It is mandatory to specify all Attributes in an INSERT query.',
+        'It is mandatory to set the Output Entity or Structure.'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That\'s Right! And usually you set it to the entity being manipulated.'
+    },
+    {
+      id: 97,
+      question: 'Is the visual environment for the developer to create applications?',
+      options: [
+        'Service Center',
+        'Service Studio',
+        'Service Manager',
+        'Lifetime'
+      ],
+      correctOption: 1,
+      anwserExplanation: 'That’s Right! The Service Studio is the environment for developing applications.'
+    },
+    {
+      id: 98,
+      question: 'Is another development environment allow you to create extensions to the platform?',
+      options: [
+        'Service Center',
+        'Service Studio',
+        'Integration Studio',
+        'Lifetime'
+      ],
+      correctOption: 2,
+      anwserExplanation: 'That’s right! The Integration Studio makes the integration with external systems like .NET code and Databases.'
+    },
+    {
+      id: 99,
+      question: 'It’s a platform for managing the server and providing an administration console, this web platform allows you to configure the platform server, monitoring the environment and inspect logs',
+      options: [
+        'Service Center',
+        'Service Studio',
+        'Integration Studio',
+        'Lifetime'
+      ],
+      correctOption: 0,
+      anwserExplanation: 'That’s Right! The Service Center will let you manage the server.'
+    },
+    {
+      id: 100,
+      question: 'Which option will allow you to track the deployments of each environment and infrastructure?',
+      options: [
+        'Service Center',
+        'Service Studio',
+        'Integration Studio',
+        'Lifetime'
+      ],
+      correctOption: 3,
+      anwserExplanation: 'That’s Right! The Lifetime will track the deployments of each environment.'
     }
+
   ]
 
   constructor() { }
