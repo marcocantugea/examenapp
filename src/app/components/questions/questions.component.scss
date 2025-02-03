@@ -2,7 +2,7 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 35px;
-    background-color: #f4f4f4;
+    //background-color: #f4f4f4;
     border-radius: 8px;
   }
   
@@ -13,3 +13,13 @@
     font-size: 45px;
     margin-bottom: 40px;
   }
+
+  #miDiv {
+    position: fixed;
+    top: 20px;
+    margin-left: 575px;
+    width: 260px;
+    height: 125px;
+    border: 1px solid rgb(158, 157, 157);
+    border-radius: 30px;
+}

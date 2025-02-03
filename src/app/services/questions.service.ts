@@ -462,7 +462,7 @@ export class QuestionsService {
         'Set the Full Swipe Left property to "No" and the Full Swipe Right property to "Yes."',
         'Set the Full Swipe Left property to "Yes" and the Full Swipe Right property to "No."'
       ],
-      correctOption: 3,
+      correctOption: 2,
       anwserExplanation: 'That\'s Right! When the "Full Swipe Left" property is set to "No," swiping left will reveal actions and options, while swiping right will trigger the full swipe action.'
     },
     {

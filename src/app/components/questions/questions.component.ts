@@ -20,6 +20,9 @@ export class QuestionsComponent implements OnInit{
   selectedQuestions: IQuestion[] = [];
   questionCount = 30;
   formFinished = false;
+  correctAnswers = 0;
+  incorrectAnswers = 0;
+  lastQuestion! :IQuestion;
 
   constructor(private questionsService: QuestionsService) {
     this.questions = this.questionsService.getQuestions();
@@ -28,14 +31,21 @@ export class QuestionsComponent implements OnInit{
 
   ngOnInit(): void {
     this.validateAnswers();
+    this.lastQuestion = {id: 0, question: '', options: [], correctOption: 0};
   }
 
   checkAnswer(question: IQuestion, option: number): void {
     if (question.correctOption === option) {
-      alert('Correct Answer');
+      if(this.lastQuestion.id !== question.id) {
+        this.correctAnswers++;
+      }
+     
     } else {
-      alert('Incorrect Answer');
+      if(this.lastQuestion.id !== question.id) {
+        this.incorrectAnswers++;
+      }
     }
+    this.lastQuestion = question;
   }
 
   validateAnswers() {
